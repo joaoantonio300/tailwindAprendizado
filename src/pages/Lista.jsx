@@ -1,55 +1,53 @@
-import React from 'react'
-import Lupa from '../assets/zoom.png';
-import Drink from '../assets/drink.png';
+import React from "react";
+import Drink from "../assets/drink.png";
+import Plate from "../assets/plate.png";
+import Layout from "../Layout/Layout";
+
+const title="Olá, Bem vindo";
+const subtitle="Escolha seu pedido entre bebidas, lanches e combos!"
+const items = [
+  { img: Drink, title: "Refrigerante", desc: "Sabor cola", price: "01.00" },
+  { img: Plate, title: "Prato", desc: "Com batatas", price: "05.00" },
+];
 
 const Lista = () => {
   return (
     <>
-    <div className=' bg-[#FF0000] flex flex-col justify-center items-center gap-10'>
-        <header className='text-white flex flex-col gap-9 w-[95%] '>
-            <div className=' flex items-center w-[100%] justify-center mt-2'>
-               <div className='border rounded-2xl flex  w-[60%] gap-4'>
-               <img className='w-[20px]' src={Lupa} alt="" />
-               <input className='outline-none focus:outline-none focus:ring-0 focus:shadow' type="search" name="" id="" />
-               </div>
-            </div>
-            <div>
-            <h1 className='font-bold text-4xl'>Olá, bem vindo</h1>
-            <p className='text-xs font-light'>O que temos para hoje? Escohla aqui seu pedido!</p>
-            </div>
-        </header>
-        <main className='bg-amber-50 w-[100%] rounded-tl-[50px] rounded-tr-[50px]' >
-       
-                <ul className='font-semibold flex justify-around mt-9'>
-                    <li className='border-b-2 border-red-500 text-red-600' >Bebidas</li>
-                    <li>Lanches</li>
-                    <li>Combos</li>
-                </ul>
+      <Layout
+        title={title}
+        subtitle={subtitle}
+      >
+        <section className="bg-white w-[100%] rounded-tl-[50px] rounded-tr-[50px]">
+          <ul className="font-bold flex justify-around mt-9">
+            <li className=" relative text-red-600">
+              Bebidas
+              <span className="absolute bottom-0 left-0 h-[15%] rounded-2xl bg-red-500 w-[60%]"></span>
+            </li>
+            <li>Lanches</li>
+            <li>Combos</li>
+          </ul>
 
-                <div className='mt-10 w-[100%] flex flex-row justify-around' >
-                    <div className='flex flex-col  rounded-[20%] justify-center items-center shadow-md w-[32%]'>
-                        <img className='h-[7em]' src={Drink} alt="" />
-                        <h3 className='font-poppins text-[10px]'>Refrigerante</h3>
-                        <p className='text-[7px]'>Saber cola</p>
-                         <p className='text-[8px] mr-12'>$ 01.00</p>
-                    </div>
-                    <div className='flex flex-col  rounded-[20%] justify-center items-center shadow-md w-[32%]'>
-                        <img className='h-[7em]' src={Drink} alt="" />
-                        <h3 className='font-poppins text-[10px]'>Refrigerante</h3>
-                        <p className='text-[7px]'>Saber cola</p>
-                         <p className='text-[8px] mr-12'>$ 01.00</p>
-                    </div>
-                    <div className='flex flex-col  rounded-[20%] justify-center items-center shadow-md w-[32%]'>
-                        <img className='h-[7em]' src={Drink} alt="" />
-                        <h3 className='font-poppins text-[10px]'>Refrigerante</h3>
-                        <p className='text-[7px]'>Saber cola</p>
-                         <p className='text-[8px] mr-12'>$ 01.00</p>
-                    </div>
-                </div>
-        </main>
-    </div>
+          <div className="flex-wrap mt-10 w-[100%] flex flex-row justify-around">
+            <div className="flex flex-col  rounded-[20%] justify-center items-center shadow-md w-[32%]">
+              <img className="h-[7em]" src={Drink} alt="" />
+              <h3 className="font-poppins text-[10px]">Refrigerante</h3>
+              <p className="text-[7px]">Sabor cola</p>
+              <p className="text-[8px] mr-12">$ 01.00</p>
+            </div>
+            {/* {items.map((item, i) => (
+               <div key={i} className="flex flex-col  rounded-[20%] justify-center items-center shadow-md w-[32%]">
+               <img className="h-[7em]" src={item.img} alt="" />
+               <h3 className="font-poppins text-[10px]">{item.title}</h3>
+               <p className="text-[7px]">{desc}</p>
+               <p className="text-[8px] mr-12">$ {price}</p>
+             </div>
+            ))} */}
+          </div>
+        </section>
+      </Layout>
+        
     </>
-  )
-}
+  );
+};
 
-export default Lista
+export default Lista;

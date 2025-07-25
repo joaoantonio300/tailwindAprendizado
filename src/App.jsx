@@ -1,4 +1,5 @@
 import './App.css'
+import Cadastrar from './pages/Cadastrar';
 import Home from './pages/Home';
 import Lista from './pages/Lista';
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/lista" element={<Lista/>}/>
+          <Route path="/cadastrar" element={<Cadastrar/>}/>
         </Routes>
     </BrowserRouter>
     </>
