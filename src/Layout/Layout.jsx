@@ -4,7 +4,7 @@ import SearchBar from '../Components/SearchBar';
 const Layout = ({ children, title, subtitle }) => {
     return (
     <>
-    <div className=" bg-[#FF0000] flex flex-col justify-center items-center gap-10">  
+    <div className=" bg-[#FF0000] flex flex-col justify-center items-center gap-10 font-poppins">  
     <header className="text-white flex flex-col gap-9 w-[95%] ">
           <div className=" flex items-center w-[100%] justify-center mt-2">
             <SearchBar/>
@@ -16,7 +16,9 @@ const Layout = ({ children, title, subtitle }) => {
             </p>
           </div>
     </header>
+    <section className="bg-white w-[100%] rounded-tl-[50px] rounded-tr-[50px]">
         {children}
+     </section>
     </div>
     </>
   )
