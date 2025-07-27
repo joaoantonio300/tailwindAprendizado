@@ -9,3 +9,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+label h1 {
+  @apply font-semibold text-[1.5em] font-poppins;
+}
+
+label input {
+  @apply w-[100%] rounded-[20px] p-2 shadow-md shadow-gray-400 outline-none;
+}
+
+label select {
+  @apply w-[100%] rounded-[20px] p-3 shadow-md shadow-gray-400 outline-none;
+}
+
+label {
+  @apply w-full;
+}

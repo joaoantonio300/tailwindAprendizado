@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from '../Components/SearchBar';
+import NavBar from '../Components/NavBar';
 
 const Layout = ({ children, title, subtitle }) => {
     return (
@@ -20,6 +21,7 @@ const Layout = ({ children, title, subtitle }) => {
         {children}
      </section>
     </div>
+      <NavBar/>
     </>
   )
 }

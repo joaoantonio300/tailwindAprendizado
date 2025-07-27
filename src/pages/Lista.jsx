@@ -1,7 +1,7 @@
-import React from "react";
 import Drink from "../assets/drink.png";
 import Plate from "../assets/plate.png";
 import Layout from "../Layout/Layout";
+import NavBar from "../Components/NavBar";
 
 const title="Olá, Bem vindo";
 const subtitle="Escolha seu pedido entre bebidas, lanches e combos!"
@@ -50,9 +50,8 @@ const Lista = () => {
             )}
             </div>
           </div>
-          
       </Layout>
-        
+        {/* <NavBar/> */}
     </>
   );
 };
