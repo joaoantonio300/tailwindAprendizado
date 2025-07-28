@@ -4,10 +4,10 @@ import Consulta from './pages/Consulta';
 import Home from './pages/Home';
 import Lista from './pages/Lista';
 import Info from './pages/Info';
-//router
+import Location from './pages/Location';
+import Login from './pages/Login';
 
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
-import Location from './pages/Location';
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/cadastrar" element={<Cadastrar/>}/>
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
+          <Route path="/login" element={<Login/>}/>
         </Routes>
     </BrowserRouter>
     </>
