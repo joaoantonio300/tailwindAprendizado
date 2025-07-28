@@ -1,6 +1,4 @@
 
-import { PrefetchPageLinks } from "react-router-dom";
-import Layout from "../Layout/Layout";
 import NavBar from "../Components/NavBar";
 
 const Info = () => {
