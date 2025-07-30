@@ -36,13 +36,14 @@ export const useAuthentication = () => {
         setError(false);
 
         try{
-            await signInWithEmailAndPassword(auth, data.email, data.password)
+            const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password)
             setLoading(false)
+            return userCredential.user;
         } catch (error) {
 
             let systemErrorMessage;
 
-            if (error.code.includes("invalid-crendetial")) {
+            if (error.code.includes("invalid-credential")) {
                 systemErrorMessage = "Usuario ou senha incorretor"
             } else {
                 systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde";

@@ -39,7 +39,8 @@ function App() {
           <Route path="/cadastrar" element={<Cadastrar/>}/>
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
-          <Route path="/login" element={user ? <Cadastrar/> : <Login/>}/>
+          <Route path="/cadastrar" element={user ? <Cadastrar/> : <Navigate to="/login"/>}/>
+          <Route path='/login' element={<Login/>}/>
         </Routes>
     </BrowserRouter>
    </AuthProvider>
