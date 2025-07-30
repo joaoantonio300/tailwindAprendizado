@@ -44,7 +44,7 @@ export const useAuthentication = () => {
             let systemErrorMessage;
 
             if (error.code.includes("invalid-credential")) {
-                systemErrorMessage = "Usuario ou senha incorretor"
+                systemErrorMessage = "Usuario ou senha incorretos"
             } else {
                 systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde";
             }
