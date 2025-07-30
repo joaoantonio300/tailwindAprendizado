@@ -1,6 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom" 
 
+import { useAuthValue } from "../context/AuthContext"
+
+const edit = ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+</svg>
+)
+
 const house = (
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +43,9 @@ const profile = (
 );
 
 const NavBar = () => {
+
+  const {user} = useAuthValue();
+
   return (
     <div className="sticky bottom-0 z-10  h-10 flex justify-center items-center w-[100vw] sm:hidden">
         <ul className="w-[90vw] bg-[#FF0000] rounded-tl-[10px] rounded-tr-[10px] h-full"> 
@@ -44,7 +54,7 @@ const NavBar = () => {
             <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/localizacao">{location}</NavLink>
             <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/info" >{info}</NavLink>
             {/* a have to create here a logic where when the adm user are conected dont go into the page of login, and yes tha register page */}
-            <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/login" >{profile}</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to={!user ? "/login" : "/consulta"} >{user ? edit : profile}</NavLink>
           </li>
           <li></li>
         </ul>

@@ -2,6 +2,8 @@ import Layout from "../Layout/Layout";
 import Edit from "../assets/edit.png";
 import Delete from "../assets/delete.png";
 import Detail from "../assets/detail.png";
+import { NavLink } from "react-router-dom" 
+
 
 const title="Meus produtos";
 const subtitle="O que vamos oferecer hoje?"

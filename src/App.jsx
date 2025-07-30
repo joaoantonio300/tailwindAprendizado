@@ -40,16 +40,13 @@ function App() {
    <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/lista" element={<Lista/>}/>
-          <Route path="/consulta" element={<Consulta/>}/>
-          <Route path="/cadastrar" element={<Cadastrar/>}/>
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
-          <Route 
-           path="/cadastrar" 
-           element={user ? <Cadastrar /> : <Navigate to="/login" />} 
-            />
-<Route path="/login" element={<Login />} />
+          <Route path="/lista" element={<Lista/>}/>
+            {/* conditions */}
+          <Route path="/login" element={!user ? <Login/> : <Navigate to="/consulta"/> }  />
+          <Route path="/consulta" element={user ? <Consulta/> : <Navigate to="/login"/> }  />
+          <Route path="/cadastrar" element={user ? <Cadastrar/> : <Navigate to="/login"/> }  />
         </Routes>
     </BrowserRouter>
    </AuthProvider>
