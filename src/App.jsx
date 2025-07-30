@@ -22,11 +22,17 @@ function App() {
   const [user, setUser] = useState(undefined);
   const {auth} = useAuthentication();
 
+  const loadingUser = user === undefined;
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user);
     })
-  },[])
+  },[auth]);
+
+  if(loadingUser) {
+    return <p>Carregando...</p>
+  }
 
   return (
     <>
@@ -39,8 +45,11 @@ function App() {
           <Route path="/cadastrar" element={<Cadastrar/>}/>
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
-          <Route path="/cadastrar" element={user ? <Cadastrar/> : <Navigate to="/login"/>}/>
-          <Route path='/login' element={<Login/>}/>
+          <Route 
+           path="/cadastrar" 
+           element={user ? <Cadastrar /> : <Navigate to="/login" />} 
+            />
+<Route path="/login" element={<Login />} />
         </Routes>
     </BrowserRouter>
    </AuthProvider>
