@@ -7,13 +7,31 @@ import Info from './pages/Info';
 import Location from './pages/Location';
 import Login from './pages/Login';
 
+import { AuthProvider } from "./context/AuthContext";
+
+import { onAuthStateChanged } from 'firebase/auth';
+
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+
+//hooks 
+import { useAuthentication } from './hooks/useAuthentication';
+import { useEffect, useState } from 'react';
 
 function App() {
 
+  const [user, setUser] = useState(undefined);
+  const {auth} = useAuthentication();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    })
+  },[])
+
   return (
     <>
-    <BrowserRouter>
+   <AuthProvider value={{user}}>
+   <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/lista" element={<Lista/>}/>
@@ -21,9 +39,10 @@ function App() {
           <Route path="/cadastrar" element={<Cadastrar/>}/>
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={user ? <Cadastrar/> : <Login/>}/>
         </Routes>
     </BrowserRouter>
+   </AuthProvider>
     </>
   )
 }

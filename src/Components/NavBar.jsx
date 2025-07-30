@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom" 
 
-
 const house = (
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ const NavBar = () => {
             <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/localizacao">{location}</NavLink>
             <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/info" >{info}</NavLink>
             {/* a have to create here a logic where when the adm user are conected dont go into the page of login, and yes tha register page */}
-            <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/cadastrar" >{profile}</NavLink>
+            <NavLink className={({ isActive }) => isActive ? "text-[#FF0000] bg-white rounded-[10px] p-1 transition-colors" : ""} to="/login" >{profile}</NavLink>
           </li>
           <li></li>
         </ul>
