@@ -5,7 +5,7 @@ import NavBar from '../Components/NavBar';
 import { useAuthentication } from '../hooks/useAuthentication';
 
 import { useAuthValue } from "../context/AuthContext"
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const buttonLogout = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -30,7 +30,9 @@ const Layout = ({ children, title, subtitle }) => {
     <header className="text-white flex flex-col gap-9 w-[95%] ">
           <div className=" flex items-center w-[100%] justify-center mt-2">
            {user && (
-             <button onClick={<Navigate to="/cadastrar"/>}>{addButton}</button>
+             <Link to="/cadastrar">
+              {addButton}
+             </Link>
            )}
             <SearchBar/>
             {user && (

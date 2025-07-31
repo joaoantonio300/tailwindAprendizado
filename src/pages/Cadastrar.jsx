@@ -2,20 +2,6 @@ import Layout from "../Layout/Layout";
 
 const title="Cadastrar";
 const subtitle="Cadastre aqui seu produto!"
-const items = [
-  { title: "Refrigerante", desc: "Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "45.00", categoria: "Comida" },
-  { title: "Refrigerante", desc: "Sabor cola Sabor cola Sabor cola Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "05.00", categoria: "Comida" },
-  { title: "Refrigerante", desc: "Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "05.00", categoria: "Comida" },
-  { title: "Refrigerante", desc: "Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "05.00", categoria: "Comida" },
-  { title: "Refrigerante", desc: "Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "05.00", categoria: "Comida" },
-  { title: "Refrigerante", desc: "Sabor cola", price: "01.00", categoria: "Bebida" },
-  { title: "Prato", desc: "Com batatas", price: "05.00", categoria: "Comida" },
-];
 
 
 const Cadastrar = () => {

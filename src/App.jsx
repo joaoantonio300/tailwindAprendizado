@@ -16,6 +16,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 //hooks 
 import { useAuthentication } from './hooks/useAuthentication';
 import { useEffect, useState } from 'react';
+import Page404 from './pages/Page404';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
           <Route path="/localizacao" element={<Location/>}/>
           <Route path="/info" element={<Info/>}/>
           <Route path="/lista" element={<Lista/>}/>
+          <Route path="*" element={<Page404/>}/>
             {/* conditions */}
           <Route path="/login" element={!user ? <Login/> : <Navigate to="/consulta"/> }  />
           <Route path="/consulta" element={user ? <Consulta/> : <Navigate to="/login"/> }  />
