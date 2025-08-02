@@ -30,9 +30,11 @@ const Layout = ({ children, title, subtitle }) => {
     <header className="text-white flex flex-col gap-9 w-[95%] ">
           <div className=" flex items-center w-[100%] justify-center mt-2">
            {user && (
-             <Link to="/cadastrar">
+           <button className='border rounded-2xl'>
+              <Link to="/cadastrar">
               {addButton}
              </Link>
+           </button>
            )}
             <SearchBar/>
             {user && (
